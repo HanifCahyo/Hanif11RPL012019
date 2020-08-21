@@ -9,21 +9,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:background="@mipmap/stik"/>
+        android:layout_marginTop="100dp"
+        android:background="@mipmap/stik"
+        android:backgroundTint="#FFFFFF"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Game-KU"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtusername"
         android:layout_width="320dp"
+        android:textColor="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
         android:hint="Username"
         android:textColorHint="#FFFFFF"
@@ -31,6 +42,7 @@
 
     <EditText
         android:id="@+id/txtpassword"
+        android:textColor="#FFFFFF"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -54,43 +66,64 @@
         android:text="LOGIN"
         android:textColor="#2196F3" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:textSize="15dp"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        android:layout_marginTop="15dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Forgot Your Login Details?"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btnresetlogin"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:hint="Reset Password"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="20dp"
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        >
-
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:textSize="15dp"
-            android:textColor="#FFFFFF"
             android:gravity="center"
-            android:layout_marginTop="15dp"/>
+            android:text="Or"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnsignup"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:layout_marginLeft="5dp"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
+            android:background="#2196F3"
             android:gravity="center"
-            android:layout_marginTop="15dp"/>
-
+            android:hint="Sign Up"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
     </LinearLayout>
+
 
 </LinearLayout>

@@ -7,12 +7,12 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 
-public class MainMenu extends AppCompatActivity {
+public class signup extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_menu);
+        setContentView(R.layout.activity_signup);
     }
     public void onBackPressed() {
         new AlertDialog.Builder(this)
@@ -20,7 +20,7 @@ public class MainMenu extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainMenu.this.finish();
+                        signup.this.finish();
                     }
                 })
                 .setNegativeButton("No", null)
