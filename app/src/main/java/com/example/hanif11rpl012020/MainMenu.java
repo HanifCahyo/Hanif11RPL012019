@@ -1,33 +1,29 @@
 package com.example.hanif11rpl012020;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.View;
 
 public class MainMenu extends AppCompatActivity {
+
+    CardView menu1;
+    CardView menu2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-    }
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setMessage("Apa kalian ingin Exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        MainMenu.this.finish();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
-    }
-    @Override public boolean onCreateOptionsMenu(Menu menu) {
-// Inflate the menu; this adds items to the action bar if it is present. getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        menu1 = (CardView)findViewById(R.id.menu1);
+        menu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ListData.class));
+            }
+        });
+        menu2 = (CardView)findViewById(R.id.menu2);
     }
 }
+

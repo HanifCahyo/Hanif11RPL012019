@@ -11,9 +11,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/menu1"
-
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="130dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="1dp"
         app:cardElevation="30dp"
@@ -40,7 +39,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:text="Game Offline Terbaik"
+                    android:text="Game Pilihan"
                     android:textColor="#2196F3"
                     tools:targetApi="lollipop"
                     android:layout_alignParentLeft="true" />
@@ -55,7 +54,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/menu2"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="130dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="1dp"
         app:cardElevation="30dp"
@@ -81,7 +80,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:text="Game Terbaik 2020"
+                    android:text="Game Favorit"
                     android:textColor="#2196F3"
                     tools:targetApi="lollipop"
                     android:layout_alignParentLeft="true" />
