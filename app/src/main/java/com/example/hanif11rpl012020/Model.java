@@ -56,6 +56,4 @@ public class Model {
     public void setVote_count(int vote_count) {
         this.vote_count = vote_count;
     }
-
-
 }

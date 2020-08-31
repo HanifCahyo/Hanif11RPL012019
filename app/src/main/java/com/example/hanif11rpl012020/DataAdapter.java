@@ -112,5 +112,4 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
             return true;
         }
     };
-
 }
