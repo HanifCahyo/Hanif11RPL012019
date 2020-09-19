@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -47,7 +49,6 @@ public class ListData extends AppCompatActivity {
         data1.setVote_count(100);
         data1.setRelease_date("01-01-2020");
         DataArrayList.add(data1);
-
 
         adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
             @Override
@@ -96,12 +97,20 @@ public class ListData extends AppCompatActivity {
                                 modelku.setAdult(jsonObject.getBoolean("adult"));
                                 modelku.setVote_count(jsonObject.getInt("vote_count"));
                                 DataArrayList.add(modelku);
-                        }
+                            }
                             //untuk handle click
                             adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
                                 @Override
                                 public void onClick(int position) {
-
+                                    Model movie = DataArrayList.get(position);
+                                    Intent intent = new Intent(getApplicationContext(), DetailMovie.class);
+                                    intent.putExtra("id",movie.id);
+                                    intent.putExtra("judul",movie.original_title);
+                                    intent.putExtra("date",movie.release_date);
+                                    intent.putExtra("deskripsi",movie.overview);
+                                    intent.putExtra("path",movie.poster_path);
+                                    startActivity(intent);
+                                    Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
 
                                 @Override
@@ -127,5 +136,5 @@ public class ListData extends AppCompatActivity {
                         Log.d("errorku", "onError errorDetail : " + error.getErrorDetail());
                     }
                 });
-   }
+    }
 }

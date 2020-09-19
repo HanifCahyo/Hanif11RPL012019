@@ -26,4 +26,3 @@ public class MainMenu extends AppCompatActivity {
         menu2 = (CardView)findViewById(R.id.menu2);
     }
 }
-
