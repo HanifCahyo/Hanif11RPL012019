@@ -31,6 +31,7 @@ public class DetailMovie extends AppCompatActivity {
     TextView tvjudul;
     ImageView ivposter;
     TextView tvdesc;
+    TextView tvdate;
     Button btnbookmark;
 
     @Override
@@ -40,6 +41,7 @@ public class DetailMovie extends AppCompatActivity {
         extras = getIntent().getExtras();
         tvjudul = (TextView)findViewById(R.id.tvjudul);
         tvdesc = (TextView)findViewById(R.id.txtdeskripsi);
+        tvdate = (TextView)findViewById(R.id.txtdate);
         ivposter = (ImageView) findViewById(R.id.ivposter);
         btnbookmark = (Button) findViewById(R.id.btnbookmark);
 
@@ -51,6 +53,7 @@ public class DetailMovie extends AppCompatActivity {
             path = extras.getString("path");
             tvjudul.setText(title);
             tvdesc.setText(deskripsi);
+            tvdate.setText(date);
             Glide.with(DetailMovie.this)
                     .load(path)
                     .override(Target.SIZE_ORIGINAL)

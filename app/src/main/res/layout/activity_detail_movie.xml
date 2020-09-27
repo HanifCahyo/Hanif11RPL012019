@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
+    android:background="#2196F3"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,9 +10,10 @@
     tools:context=".DetailMovie">
     <TextView
         android:textSize="20sp"
+        android:textColor="#FFFFFF"
         android:layout_margin="20dp"
         android:layout_gravity="center"
-        android:text="judul movie"
+        android:text="Judul Movie"
         android:id="@+id/tvjudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -24,12 +26,22 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
         android:id="@+id/txtdeskripsi"
-        android:text="Deskripsi"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Deskripsi" />
+
+    <TextView
+        android:id="@+id/txtdate"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Release Date" />
 
     <Button
         android:id="@+id/btnbookmark"
@@ -37,6 +49,8 @@
         android:layout_gravity="center"
         android:text="Bookmark"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#2196F3"
+        android:background="#FFFFFF"/>
 
 </LinearLayout>
