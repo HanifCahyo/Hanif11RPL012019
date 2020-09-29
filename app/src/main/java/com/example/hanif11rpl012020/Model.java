@@ -1,6 +1,6 @@
 package com.example.hanif11rpl012020;
 
-public class Model {
+public class    Model {
     //https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg
     String original_title;
     String release_date;

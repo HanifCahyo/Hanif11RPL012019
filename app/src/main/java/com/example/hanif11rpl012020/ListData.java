@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
@@ -20,7 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ListData extends AppCompatActivity {
 
@@ -37,18 +37,18 @@ public class ListData extends AppCompatActivity {
         //addData();
         addDataOnline();
     }
-
     void addData() {
         //offline, isi data offline dulu
         DataArrayList = new ArrayList<>();
         Model data1 = new Model();
         data1.setOriginal_title("Judul Film");
-        data1.setPoster_path("https://image.tmdb.org/t/p/w600_and_h900_bestv2/uOw5JD8IlD546feZ6oxbIjvN66P.jpg");
+        data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
         data1.setAdult(false);
         data1.setOverview("Deskripsi Film disini");
         data1.setVote_count(100);
         data1.setRelease_date("01-01-2020");
         DataArrayList.add(data1);
+
 
         adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
             @Override
@@ -70,7 +70,7 @@ public class ListData extends AppCompatActivity {
 
     }
 
-    void addDataOnline() {
+    void addDataOnline(){
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -82,7 +82,7 @@ public class ListData extends AppCompatActivity {
                         Log.d("hasiljson", "onResponse: " + response.toString());
                         //jika sudah berhasil debugm lanjutkan code dibawah ini
                         DataArrayList = new ArrayList<>();
-                        Model  modelku;
+                        Model modelku;
                         try {
                             Log.d("hasiljson", "onResponse: " + response.toString());
                             JSONArray jsonArray = response.getJSONArray("results");
@@ -90,6 +90,7 @@ public class ListData extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 modelku = new Model();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                modelku.setId(jsonObject.getInt("id"));
                                 modelku.setOriginal_title(jsonObject.getString("original_title"));
                                 modelku.setOverview(jsonObject.getString("overview"));
                                 modelku.setRelease_date(jsonObject.getString("release_date"));
@@ -121,12 +122,11 @@ public class ListData extends AppCompatActivity {
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                    }
 
+                    }
 
                     @Override
                     public void onError(ANError error) {
@@ -137,4 +137,5 @@ public class ListData extends AppCompatActivity {
                     }
                 });
     }
+
 }
