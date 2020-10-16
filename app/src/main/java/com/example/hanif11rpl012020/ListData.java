@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -50,6 +51,7 @@ public class ListData extends AppCompatActivity {
         DataArrayList.add(data1);
 
 
+
         adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
             @Override
             public void onClick(int position) {
@@ -71,6 +73,14 @@ public class ListData extends AppCompatActivity {
     }
 
     void addDataOnline(){
+        final LoadingDialog loadingDialog = new LoadingDialog((ListData.this));
+        loadingDialog.startLoadingDialog();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                   loadingDialog.dimissDialog();
+                }
+            }, 1500);
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)

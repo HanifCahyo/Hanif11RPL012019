@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:orientation="vertical"
-    android:background="#2196F3"
+    android:background="@drawable/good_night_img"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu">
+    tools:context=".MainMenu"
+    android:id="@+id/container">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/menu1"
+        app:cardBackgroundColor="@color/cardview_shadow_start_color"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:layout_marginBottom="1dp"
-        app:cardElevation="30dp"
-        app:contentPadding="10dp">
+        android:layout_marginBottom="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:drawableRight="@drawable/ic_baseline_search_24"
+                    android:textColor="#FFFFFF"
+                    tools:targetApi="lollipop" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -32,19 +47,13 @@
                     style="@android:style/TextAppearance.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="30dp"
                     android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:layout_alignParentStart="true"
-                    android:elevation="3dp"
-                    android:ellipsize="marquee"
-                    android:focusable="true"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:padding="10dp"
+
                     android:singleLine="true"
-                    android:text="Pilihan"
-                    android:textColor="#2196F3"
-                    tools:targetApi="lollipop"
-                    android:layout_alignParentLeft="true" />
+                    android:text="Pencarian"
+                    android:textColor="#FFFFFF"
+                    tools:targetApi="lollipop" />
 
             </RelativeLayout>
 
@@ -55,17 +64,32 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/menu2"
+        app:cardBackgroundColor="@color/cardview_shadow_start_color"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:layout_marginBottom="1dp"
-        app:cardElevation="30dp"
-        app:contentPadding="10dp">
+        android:layout_marginBottom="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@android:style/TextAppearance.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:drawableRight="@drawable/ic_baseline_bookmark_24"
+                    android:textColor="#FFFFFF"
+                    tools:targetApi="lollipop" />
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -75,19 +99,13 @@
                     style="@android:style/TextAppearance.Medium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="30dp"
                     android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:layout_alignParentStart="true"
-                    android:elevation="3dp"
-                    android:ellipsize="marquee"
-                    android:focusable="true"
-                    android:marqueeRepeatLimit="marquee_forever"
-                    android:padding="10dp"
+
                     android:singleLine="true"
                     android:text="Bookmark"
-                    android:textColor="#2196F3"
-                    tools:targetApi="lollipop"
-                    android:layout_alignParentLeft="true" />
+                    android:textColor="#FFFFFF"
+                    tools:targetApi="lollipop" />
 
             </RelativeLayout>
 

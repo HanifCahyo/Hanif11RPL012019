@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    android:background="#2196F3"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="#FFEB3B"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,16 +12,12 @@
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_gravity="center"
-        android:layout_marginTop="250dp"
-        android:backgroundTint="#FFFFFF"
-        android:background="@mipmap/stik"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Game-KU"
-        android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:textStyle="bold" />
-</LinearLayout>
+        android:background="@drawable/ic_baseline_movie_24"
+        android:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DetailMovie"></activity>
+        <activity android:name=".DetailFavourite"></activity>
+        <activity android:name=".DetailMovie" />
         <activity android:name=".ListData" />
         <activity android:name=".ListDataFavourite" />
         <activity android:name=".SplashScreen">
@@ -28,7 +29,6 @@
         </activity>
         <activity android:name=".ControlClass" />
         <activity android:name=".MainMenu" />
-        <activity android:name=".Registrasion" />
         <activity android:name=".MainActivity" />
     </application>
 

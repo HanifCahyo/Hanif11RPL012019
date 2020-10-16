@@ -21,6 +21,8 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHolder> {
+
+
     private ArrayList<Model> dataList;
     private Callback callback;
     View viewku;
@@ -115,5 +117,5 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
             return true;
         }
     };
-
+ 
 }

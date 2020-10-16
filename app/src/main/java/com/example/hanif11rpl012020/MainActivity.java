@@ -1,58 +1,94 @@
 package com.example.hanif11rpl012020;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
-    EditText txtusername;
+    ConstraintLayout constraintLayout;
+    TextView tvTimeMsg;
+    EditText txtemail;
     EditText txtpassword;
-    Button btnlogin;
+    Button btnsignin;
     Button btnsignup;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pref = getSharedPreferences("login", MODE_PRIVATE);
-        txtusername = (EditText)findViewById(R.id.txtusername);
+
+        constraintLayout = findViewById(R.id.container);
+        tvTimeMsg = (TextView) findViewById(R.id.tv_time_msg);
+
+        Calendar c = Calendar.getInstance();
+
+        int timeOfDay=c.get(Calendar.HOUR_OF_DAY);
+
+        if (timeOfDay >= 0 && timeOfDay <12) {
+            //morning
+            constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
+            tvTimeMsg.setText("Good Morning");
+        }
+
+        else if(timeOfDay >=12 && timeOfDay <16) {
+            //afternoon
+            constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
+            tvTimeMsg.setText("Good Afternoon");
+        }
+        else if(timeOfDay >=16 && timeOfDay <21) {
+            //evening
+            constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
+            tvTimeMsg.setText("Good Evening");
+        }
+        else if(timeOfDay >=21 && timeOfDay <24) {
+            //night
+            constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
+            tvTimeMsg.setText("Good Night");
+        }
+
+        getSupportActionBar().hide();
+
+        txtemail = (EditText)findViewById(R.id.txtemail);
         txtpassword = (EditText)findViewById(R.id.txtpassword);
-        btnlogin = (Button) findViewById(R.id.btnlogin);
+        btnsignin = (Button) findViewById(R.id.btnsignin);
         btnsignup = (Button) findViewById(R.id.btnsignup);
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (txtusername.getText().toString().equalsIgnoreCase("hanif")
-                        && txtpassword.getText().toString().equalsIgnoreCase("cahyo")){
+                if (txtemail.getText().toString().equalsIgnoreCase("admin")
+                        && txtpassword.getText().toString().equalsIgnoreCase("admin")){
                     //saving ke SP
                     editor = pref.edit();
-                    editor.putString("username", txtusername.getText().toString());
+                    editor.putString("username", txtemail.getText().toString());
                     editor.putString("status", "login");
                     editor.apply();
                     //menuju ke main menu
                     startActivity(new Intent(getApplicationContext(), MainMenu.class));
                     finish();
                 }
-            }
-        });
-
-        btnsignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Registrasion.class));
-                finish();
             }
         });
 
