@@ -47,26 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
         int timeOfDay=c.get(Calendar.HOUR_OF_DAY);
 
-        if (timeOfDay >= 0 && timeOfDay <12) {
+        if (timeOfDay >= 0 && timeOfDay <16) {
             //morning
             constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
-            tvTimeMsg.setText("Good Morning");
+            tvTimeMsg.setText("Morning");
         }
-
-        else if(timeOfDay >=12 && timeOfDay <16) {
-            //afternoon
-            constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
-            tvTimeMsg.setText("Good Afternoon");
-        }
-        else if(timeOfDay >=16 && timeOfDay <21) {
-            //evening
-            constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
-            tvTimeMsg.setText("Good Evening");
-        }
-        else if(timeOfDay >=21 && timeOfDay <24) {
+        else if(timeOfDay >=16 && timeOfDay <24) {
             //night
             constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
-            tvTimeMsg.setText("Good Night");
+            tvTimeMsg.setText("Night");
         }
 
         getSupportActionBar().hide();
@@ -96,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setMessage("Apa kalian ingin Exit?")
+                .setMessage("Exit?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

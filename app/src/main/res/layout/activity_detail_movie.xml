@@ -7,7 +7,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailMovie">
+    tools:context=".DetailMovie"
+    android:id="@+id/container">
 
     <TextView
         android:textSize="20dp"
@@ -41,6 +42,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Release Date" />
+
+    <TextView
+        android:id="@+id/tvumur"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adult" />
+
+    <TextView
+        android:id="@+id/tvvote"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vote" />
 
 
     <Button

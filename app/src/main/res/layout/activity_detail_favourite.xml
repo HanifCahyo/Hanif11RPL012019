@@ -7,7 +7,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailFavourite">
+    tools:context=".DetailFavourite"
+    android:id="@+id/container">
 
     <TextView
         android:textSize="20dp"
@@ -41,4 +42,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Release Date" />
+
 </LinearLayout>

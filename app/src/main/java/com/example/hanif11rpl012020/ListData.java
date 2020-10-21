@@ -120,6 +120,8 @@ public class ListData extends AppCompatActivity {
                                     intent.putExtra("date",movie.release_date);
                                     intent.putExtra("deskripsi",movie.overview);
                                     intent.putExtra("path",movie.poster_path);
+                                    intent.putExtra("umur",movie.adult);
+                                    intent.putExtra("vote",movie.vote_count);
                                     startActivity(intent);
                                     Toast.makeText(ListData.this, ""+position, Toast.LENGTH_SHORT).show();
                                 }
