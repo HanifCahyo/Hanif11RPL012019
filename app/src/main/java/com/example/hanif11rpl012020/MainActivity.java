@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         if (timeOfDay >= 0 && timeOfDay <16) {
             //morning
             constraintLayout.setBackground(getDrawable(R.drawable.good_morning_img));
-            tvTimeMsg.setText("Morning");
+            tvTimeMsg.setText("Good Morning");
         }
         else if(timeOfDay >=16 && timeOfDay <24) {
             //night
             constraintLayout.setBackground(getDrawable(R.drawable.good_night_img));
-            tvTimeMsg.setText("Night");
+            tvTimeMsg.setText("Good Night");
         }
 
         getSupportActionBar().hide();

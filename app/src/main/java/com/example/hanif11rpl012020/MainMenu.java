@@ -39,6 +39,8 @@ public class MainMenu extends AppCompatActivity {
             linearLayout.setBackground(getDrawable(R.drawable.good_night_img));
         }
 
+        getSupportActionBar().hide();
+
             menu1 = (CardView) findViewById(R.id.menu1);
             menu1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -55,6 +57,7 @@ public class MainMenu extends AppCompatActivity {
             });
 
     }
+
 
     public void onBackPressed() {
         new AlertDialog.Builder(this)

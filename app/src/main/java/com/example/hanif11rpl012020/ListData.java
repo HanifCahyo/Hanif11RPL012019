@@ -1,14 +1,18 @@
 package com.example.hanif11rpl012020;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -22,18 +26,39 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class ListData extends AppCompatActivity {
+
+    LinearLayout linearLayout;
 
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
 
+    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
+
+        linearLayout = findViewById(R.id.container);
+        Calendar c = Calendar.getInstance();
+        int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
+
+        if (timeOfDay >= 0 && timeOfDay < 16) {
+            //morning
+            linearLayout.setBackground(getDrawable(R.drawable.good_morning_img));
+
+        } else if (timeOfDay >= 16 && timeOfDay < 24) {
+            //night
+            linearLayout.setBackground(getDrawable(R.drawable.good_night_img));
+        }
+
+        getSupportActionBar().hide();
+
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
         //addData();
         addDataOnline();

@@ -12,7 +12,7 @@
 
     <TextView
         android:textSize="20dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#B5FFFFFF"
         android:layout_margin="20dp"
         android:layout_gravity="center"
         android:text="Judul Movie"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:textColor="#FFFFFF"
+        android:textColor="#B5FFFFFF"
         android:id="@+id/tvdeskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,9 +38,23 @@
 
     <TextView
         android:id="@+id/tvdate"
-        android:textColor="#FFFFFF"
+        android:textColor="#B5FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Release Date" />
+
+    <TextView
+        android:id="@+id/tvumur"
+        android:textColor="#B5FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adult" />
+
+    <TextView
+        android:id="@+id/tvvote"
+        android:textColor="#B5FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vote" />
 
 </LinearLayout>

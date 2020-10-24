@@ -110,6 +110,7 @@ public class DetailMovie extends AppCompatActivity {
                 movieModel.setPath(path);
                 movieModel.setReleaseDate(date);
 
+
                 realmHelper = new RealmHelper(realm);
                 realmHelper.save(movieModel);
 

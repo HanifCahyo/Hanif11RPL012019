@@ -32,6 +32,7 @@ public class DetailFavourite extends AppCompatActivity {
     String path;
     String id;
 
+
     TextView tvjudul;
     ImageView ivposter;
     TextView tvdesc;
